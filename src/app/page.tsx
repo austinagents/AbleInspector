@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HeroCarousel from "@/components/HeroCarousel";
 import { getPageByPath } from "@/lib-site-content";
 
 const page = getPageByPath("/");
@@ -14,44 +15,19 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  if (!page) {
-    return null;
-  }
-
   return (
-    <main
-      style={{
-        maxWidth: "900px",
-        margin: "0 auto",
-        padding: "60px 24px",
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
-      <p
-        style={{
-          fontSize: "13px",
-          textTransform: "uppercase",
-          letterSpacing: "0.08em",
-          opacity: 0.6,
-        }}
-      >
-        Able Home Inspections
-      </p>
+    <main>
+      <HeroCarousel />
 
-      <h1 style={{ fontSize: "42px", lineHeight: 1.1 }}>
-        {page.headings.h1?.[0] || page.seo.title}
-      </h1>
+      <section className="hero-exit">
+        <p>Southwest Florida property inspections</p>
 
-      <div
-        style={{
-          whiteSpace: "pre-wrap",
-          fontSize: "17px",
-          lineHeight: 1.7,
-          marginTop: "32px",
-        }}
-      >
-        {page.visible_text}
-      </div>
+        <h2>
+          Experience where it matters.
+          <br />
+          Detail where it counts.
+        </h2>
+      </section>
     </main>
   );
 }
