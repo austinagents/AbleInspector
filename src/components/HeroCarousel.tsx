@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import SiteHeader from "@/components/SiteHeader";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const slides = [
@@ -87,26 +88,7 @@ export default function HeroCarousel() {
 
       <div className="hero-overlay" />
 
-      <header className="hero-header">
-        <Link href="/" className="hero-brand" aria-label="Able Home Inspections">
-          <strong>ABLE</strong>
-          <span>HOME INSPECTIONS</span>
-        </Link>
-
-        <nav className="hero-nav" aria-label="Primary navigation">
-          <Link href="/home-inspection-naples-fl">Inspections</Link>
-          <Link href="/wind-mitigation-inspection-naples-fl">
-            Insurance
-          </Link>
-          <Link href="/commercial-inspection-naples-fl">Commercial</Link>
-          <Link href="/qualifications-naples-fl">About</Link>
-        </nav>
-
-        <Link href="/contact-us" className="hero-contact">
-          Schedule
-          <span>↗</span>
-        </Link>
-      </header>
+      <SiteHeader variant="overlay" />
 
       <div className="hero-content" key={`${active}-${cycle}`}>
         <div className="hero-kicker">
